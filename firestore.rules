@@ -1,0 +1,9 @@
+rules_version = '2';
+// Todo el acceso a datos pasa por el servidor (el Admin SDK ignora estas reglas).
+// El cliente no puede leer ni escribir nada directamente.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /metadata/exams { allow read: if true; }
+    match /{document=**} { allow read, write: if false; }
+  }
+}

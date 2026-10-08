@@ -1,0 +1,238 @@
+{
+  "id": "sis211-parcial2-g2",
+  "title": "Segundo Parcial SIS-211 G-2",
+  "subject": "Técnicas de Programación II",
+  "description": "Programación orientada a objetos en Java: encapsulamiento, herencia, polimorfismo, interfaces y constructores.",
+  "questions": [
+    {
+      "prompt": "¿Qué principio de la POO garantiza que los detalles internos de una clase no puedan ser accedidos directamente desde afuera?",
+      "options": [
+        "Abstracción",
+        "Herencia",
+        "Encapsulamiento",
+        "Polimorfismo"
+      ],
+      "answer": 2,
+      "explanation": "El encapsulamiento oculta el estado interno y obliga a interactuar mediante métodos controlados."
+    },
+    {
+      "prompt": "¿Cuál de los siguientes casos representa correctamente sobreescritura (override)?",
+      "options": [
+        "Dos métodos con el mismo nombre, pero distintos parámetros",
+        "Un método en una subclase que redefine el método de la clase padre",
+        "Dos métodos con el mismo nombre y mismos parámetros dentro de la misma clase",
+        "Un método static redefinido en una clase"
+      ],
+      "answer": 1,
+      "explanation": "Override: nueva implementación en la clase hija con la misma firma (nombre y parámetros)."
+    },
+    {
+      "prompt": "¿Cuál es el beneficio principal del polimorfismo?",
+      "options": [
+        "Crear múltiples objetos al mismo tiempo",
+        "Permitir que un mismo método actúe de diferentes maneras según el objeto",
+        "Permitir acceso directo a los atributos",
+        "Permitir heredar múltiples clases"
+      ],
+      "answer": 1,
+      "explanation": "Una misma llamada ejecuta comportamientos distintos según la instancia real."
+    },
+    {
+      "prompt": "¿Cuál de las siguientes clases no puede ser instanciada?",
+      "options": [
+        "Clase concreta",
+        "Clase final",
+        "Clase abstracta",
+        "Clase pública sin constructor"
+      ],
+      "answer": 2,
+      "explanation": "Las clases abstractas son plantillas para heredar; Java no permite crear objetos directamente de ellas."
+    },
+    {
+      "prompt": "¿Qué palabra clave se utiliza para evitar que una clase sea heredada?",
+      "options": [
+        "static",
+        "private",
+        "final",
+        "abstract"
+      ],
+      "answer": 2,
+      "explanation": "`final` en una clase impide que otras la extiendan."
+    },
+    {
+      "prompt": "¿Cuál es una forma válida de sobrecarga (overload)?",
+      "options": [
+        "Cambiar el tipo de retorno",
+        "Cambiar el nombre del método",
+        "Cambiar la visibilidad",
+        "Cambiar la lista de parámetros"
+      ],
+      "answer": 3,
+      "explanation": "La sobrecarga exige misma clase, mismo nombre y lista de parámetros distinta (cantidad o tipo)."
+    },
+    {
+      "prompt": "Sobre el uso de interfaces en Java, ¿qué afirmación es verdadera?",
+      "options": [
+        "Una interfaz puede tener atributos privados",
+        "Una interfaz puede tener métodos con implementación completa",
+        "Una interfaz solo puede tener métodos abstractos",
+        "Una clase puede implementar múltiples interfaces"
+      ],
+      "answer": 3,
+      "explanation": "Java no tiene herencia múltiple de clases, pero una clase sí puede implementar varias interfaces."
+    },
+    {
+      "prompt": "¿Qué sucede cuando un atributo es protegido?",
+      "options": [
+        "Solo se accede desde la misma clase",
+        "No puede heredarse",
+        "Puede ser accedido desde subclases y mismo paquete",
+        "Es accesible desde cualquier clase"
+      ],
+      "answer": 2,
+      "explanation": "`protected` es visible en el mismo paquete y en cualquier subclase."
+    },
+    {
+      "prompt": "Si una clase hereda de otra, ¿qué constructor se invoca primero?",
+      "options": [
+        "El constructor de la subclase",
+        "El constructor de la superclase",
+        "El constructor con más parámetros",
+        "Ninguno hasta llamar manualmente a super()"
+      ],
+      "answer": 1,
+      "explanation": "Java invoca primero el de la superclase (super() implícito si no se indica)."
+    },
+    {
+      "prompt": "¿Cuál es el propósito de la palabra clave super?",
+      "options": [
+        "Crear un objeto de la clase padre",
+        "Invocar métodos y atributos de la clase padre",
+        "Declarar métodos abstractos",
+        "Indicar sobreescritura"
+      ],
+      "answer": 1,
+      "explanation": "`super` referencia métodos, atributos o constructores de la superclase inmediata."
+    },
+    {
+      "prompt": "Sobreescritura básica: ¿cuál sobrescribe correctamente el método?",
+      "code": "class Animal{\n  public void sonido(){\n    System.out.println(\"Sonido Generico\");\n  }\n}\n\nclass Perro extends Animal{\n  // completar aquí\n}",
+      "options": [
+        "public void sonido(){ System.out.println(\"Guau Guau\"); }",
+        "public void sonido(int x){ System.out.println(\"Guau\"); }",
+        "static void sonido(){ System.out.println(\"Guau\"); }",
+        "public String sonido(){ return \"Guau\"; }"
+      ],
+      "answer": 0,
+      "explanation": "Debe tener la misma firma (nombre y sin parámetros) y el mismo retorno (void)."
+    },
+    {
+      "prompt": "Abstracción: ¿cuál completa correctamente?",
+      "code": "abstract class Figura{\n  // completar aquí\n}\n\nclass Circulo extends Figura{\n  @Override\n  public double area(){ return 3.14; }\n}",
+      "options": [
+        "public abstract double area();",
+        "private double area();",
+        "public abstract int area();",
+        "public static double area();"
+      ],
+      "answer": 0,
+      "explanation": "Un método sin cuerpo en una clase abstracta lleva `abstract` y su retorno debe coincidir (double)."
+    },
+    {
+      "prompt": "Llamada al constructor padre",
+      "code": "class Persona{\n  String nombre;\n  Persona(String n) { nombre = n; }\n}\n\nclass Estudiante extends Persona {\n  Estudiante(String n){\n    // completar\n  }\n}",
+      "options": [
+        "super(n);",
+        "this(n);",
+        "Persona(n);",
+        "return;"
+      ],
+      "answer": 0,
+      "explanation": "Persona no tiene constructor sin parámetros, así que se debe llamar explícitamente con super(n)."
+    },
+    {
+      "prompt": "Sobrecarga correcta: ¿cuál define una sobrecarga válida?",
+      "code": "class Calculadora{\n  // completar aquí\n}",
+      "options": [
+        "int sumar(int a, int b) y int sumar(int a, int b, int c)",
+        "int sumar(int a, int b) y double sumar(int a, int b)",
+        "int sumar(int a, int b) y int sumar(int x, int y)",
+        "int sumar(int a, int b) y static int sumar(int a, int b)"
+      ],
+      "answer": 0,
+      "explanation": "Cambia la cantidad de parámetros. Solo cambiar retorno, nombres de variables o static no basta."
+    },
+    {
+      "prompt": "Encapsulación: completar el getter correcto",
+      "code": "class Cuenta{\n  private double saldo;\n\n  // completar getter\n}",
+      "options": [
+        "public double getSaldo(){return saldo;}",
+        "private double getSaldo(){return saldo;}",
+        "public void getSaldo(double s){saldo = s;}",
+        "protected void saldo(){}"
+      ],
+      "answer": 0,
+      "explanation": "Un getter devuelve el atributo privado: retorno double y visibilidad pública."
+    },
+    {
+      "prompt": "Polimorfismo dinámico",
+      "code": "Animal a = new Perro();\n// completar",
+      "options": [
+        "a.sonido();",
+        "Perro.sonido();",
+        "Animal.sonido();",
+        "super.sonido();"
+      ],
+      "answer": 0,
+      "explanation": "El compilador revisa el tipo Animal, pero en ejecución se usa la implementación de Perro."
+    },
+    {
+      "prompt": "Método abstracto",
+      "code": "abstract class Ave{\n  // completar\n}\n\nclass Aguila extends Ave{\n  public void volar(){\n    System.out.println(\"Volando Alto\");\n  }\n}",
+      "options": [
+        "public abstract void volar();",
+        "private abstract void volar();",
+        "static void volar();",
+        "final void volar();"
+      ],
+      "answer": 0,
+      "explanation": "Un método abstracto no tiene cuerpo y debe ser public o protected; no puede ser private, static ni final."
+    },
+    {
+      "prompt": "Uso correcto de this",
+      "code": "class Punto{\n  int x;\n  Punto(int x){\n    // completar\n  }\n}",
+      "options": [
+        "this.x = x;",
+        "x = this.x;",
+        "super.x = x;",
+        "return this;"
+      ],
+      "answer": 0,
+      "explanation": "`this.x` es el atributo; `x` es el parámetro local."
+    },
+    {
+      "prompt": "Polimorfismo con interfaces",
+      "code": "interface Vehiculo{\n  void mover();\n}\n\nclass Auto implements Vehiculo {\n  // completar aquí\n}",
+      "options": [
+        "public void mover(){ System.out.println(\"El auto se mueve\"); }",
+        "void mover(int x){}",
+        "public String mover(){ return \"\"; }",
+        "private void mover(){}"
+      ],
+      "answer": 0,
+      "explanation": "Los métodos de interfaz son public abstract; al implementarlos hay que declararlos public."
+    },
+    {
+      "prompt": "¿Cuál evita que la clase sea heredada?",
+      "code": "// completar",
+      "options": [
+        "final class Utilidades{}",
+        "abstract class Utilidades{}",
+        "private class Utilidades{}",
+        "class Utilidades final{}"
+      ],
+      "answer": 0,
+      "explanation": "`final` va antes de `class`: nadie puede usar `extends Utilidades`."
+    }
+  ]
+}
